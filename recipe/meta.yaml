@@ -1,5 +1,5 @@
 {% set name = "graphql-server-core" %}
-{% set version = "1.1.1" %}
+{% set version = "1.1.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e5f82add4b3d5580aa1f1e7d9f00e944ad3abe1b65eb337e611d6a77cc20f231
+  sha256: 7fefef060a897d09d0b3fbff432498f7bab8db1099a95a6215b941387b356115
 
 build:
   noarch: python
