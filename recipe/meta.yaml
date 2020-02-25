@@ -20,8 +20,8 @@ requirements:
     - pip
   run:
     - python
-    - graphql-core >=2.1
-    - promise
+    - graphql-core >=2.3,<3
+    - promise >=2.3,<3
 
 test:
   imports:
