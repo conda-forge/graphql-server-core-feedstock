@@ -1,5 +1,5 @@
 {% set name = "graphql-server-core" %}
-{% set version = "1.1.3" %}
+{% set version = "1.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: fa810f811cd91dd938ac49819562c3a12f2b6bf141164f984b16359359133983
+  sha256: 04ee90da0322949f7b49ff6905688e3a21a9efbd5a7d7835997e431a0afdbd11
 
 build:
   noarch: python
@@ -20,8 +20,8 @@ requirements:
     - pip
   run:
     - python
-    - graphql-core >=2.1
-    - promise
+    - graphql-core >=2.3,<3
+    - promise >=2.3,<3
 
 test:
   imports:
@@ -41,3 +41,4 @@ extra:
   recipe-maintainers:
     - carlodri
     - dhirschfeld
+    - KingDarBoja
