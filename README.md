@@ -116,6 +116,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@KingDarBoja](https://github.com/KingDarBoja/)
 * [@carlodri](https://github.com/carlodri/)
 * [@dhirschfeld](https://github.com/dhirschfeld/)
 
