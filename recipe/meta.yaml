@@ -1,5 +1,5 @@
 {% set name = "graphql-server-core" %}
-{% set version = "1.2.0" %}
+{% set version = "2.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 04ee90da0322949f7b49ff6905688e3a21a9efbd5a7d7835997e431a0afdbd11
+  sha256: 11fa8a434e1cd05d29709af29414b8b6f596925d26afe39eff33bd24a5f93605
 
 build:
   noarch: python
-  number: 1
-  script: "{{ PYTHON }} -m pip install . -vv"
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -32,8 +32,8 @@ about:
   license: MIT
   license_family: MIT
   # requested inclusion of license file in distro https://github.com/graphql-python/graphql-server-core/pull/14
-  license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE'
-  summary: 'This is the core package for using GraphQL in a custom server easily.'
+  license_file: {{ environ["RECIPE_DIR"] }}/LICENSE
+  summary: This is the core package for using GraphQL in a custom server easily.
   doc_url: https://docs.graphene-python.org/en/latest/
   dev_url: https://github.com/graphql-python/graphql-server-core
 
