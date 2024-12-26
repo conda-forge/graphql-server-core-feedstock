@@ -6,24 +6,27 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 11fa8a434e1cd05d29709af29414b8b6f596925d26afe39eff33bd24a5f93605
 
 build:
   noarch: python
-  number: 1
+  number: 2
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python
+    - python {{ python_min }}
     - pip
+    - setuptools
   run:
-    - python
+    - python >={{ python_min }}
     - graphql-core >=2.3,<3
     - promise >=2.3,<3
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - graphql_server
 
