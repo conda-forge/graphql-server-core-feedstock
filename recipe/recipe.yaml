@@ -1,0 +1,47 @@
+schema_version: 1
+
+context:
+  name: graphql-server-core
+  version: 2.0.0
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
+  sha256: 11fa8a434e1cd05d29709af29414b8b6f596925d26afe39eff33bd24a5f93605
+
+build:
+  number: 3
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - setuptools
+  run:
+    - python >=${{ python_min }}
+    - graphql-core >=2.3,<3
+    - promise >=2.3,<3
+
+tests:
+  - python:
+      imports:
+        - graphql_server
+      python_version: ${{ python_min }}.*
+about:
+  license: MIT
+  license_file: LICENSE
+  summary: This is the core package for using GraphQL in a custom server easily.
+  homepage: https://graphene-python.org/
+  repository: https://github.com/graphql-python/graphql-server-core
+  documentation: https://docs.graphene-python.org/en/latest/
+
+extra:
+  recipe-maintainers:
+    - carlodri
+    - dhirschfeld
+    - KingDarBoja
